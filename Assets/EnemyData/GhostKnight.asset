@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d69185bf191222449351f469d8fa6eb, type: 3}
+  m_Name: GhostKnight
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyIndex
+  enemyName: GhostKnight
+  enemySprite: {fileID: -222708572276646649, guid: 2d014b189ab491f4dafca53e6cc4c4f8, type: 3}
+  attack1: 4
+  attack2: 5
+  attack3: 9
+  attack4: 8
+  defend1: 0
+  defend2: 5
+  defend3: 8
+  defend4: 10
+  health: 60

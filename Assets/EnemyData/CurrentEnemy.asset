@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d69185bf191222449351f469d8fa6eb, type: 3}
+  m_Name: CurrentEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyIndex
+  enemyName: Current Enemy
+  enemySprite: {fileID: 0}
+  attack1: 0
+  attack2: 0
+  attack3: 0
+  attack4: 0
+  defend1: 0
+  defend2: 0
+  defend3: 0
+  defend4: 0
+  health: 0
