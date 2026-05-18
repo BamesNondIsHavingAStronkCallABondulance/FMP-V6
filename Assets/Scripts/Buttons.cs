@@ -9,6 +9,11 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void MenuLoad()
     {
         SceneManager.LoadScene(0);

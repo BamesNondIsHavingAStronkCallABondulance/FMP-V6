@@ -15,7 +15,7 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
     string rightDoorOption;
     int rightDoorOptionInt;
 
-    bool lCombatEncounter, lEventEncounter, lBossEncounter, lRestEncounter, rCombatEncounter, rEventEncounter, rBossEncounter, rRestEncounter;
+    bool lCombatEncounter, lBossEncounter, lRestEncounter, rCombatEncounter, rBossEncounter, rRestEncounter;
 
     int floorNumber;
 
@@ -31,22 +31,21 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             EncounterSetsLogic();
         }
 
-        floorNumber = PlayerPrefs.GetInt("gameFloor", 1);
-        print(floorNumber);
     }
 
     void EncounterSetsLogic()
     {
         bool rerollEncounter = true;
+        floorNumber = PlayerPrefs.GetInt("gameFloor", 1);
 
         if (floorNumber == 1)
         {
-            leftDoorOptionInt = Random.Range(0, possibleEncounterStrings.Length - 2);
+            leftDoorOptionInt = Random.Range(0, possibleEncounterStrings.Length - 1);
             leftDoorOption = possibleEncounterStrings[leftDoorOptionInt];
 
             while (rerollEncounter)
             {
-                rightDoorOptionInt = Random.Range(0, possibleEncounterStrings.Length - 2);
+                rightDoorOptionInt = Random.Range(0, possibleEncounterStrings.Length - 1);
                 if (rightDoorOptionInt != leftDoorOptionInt)
                 {
                     rerollEncounter = false;
@@ -80,7 +79,7 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             }
 
             print(rightDoorOption);
-            print(rightDoorOptionInt);
+            print(leftDoorOptionInt);
         }
 
         if (floorNumber == 5)
@@ -126,13 +125,6 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             leftRestImage.SetActive(true);
             leftBossImage.SetActive(false);
         }
-        if (leftDoorOption == "event")
-        {
-            leftCombatImage.SetActive(false);
-            leftEventImage.SetActive(true);
-            leftRestImage.SetActive(false);
-            leftBossImage.SetActive(false);
-        }
     }
 
     void rightDoorSpriteLogic()
@@ -158,13 +150,6 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             rightRestImage.SetActive(true);
             rightBossImage.SetActive(false);
         }
-        if (rightDoorOption == "event")
-        {
-            rightCombatImage.SetActive(false);
-            rightEventImage.SetActive(true);
-            rightRestImage.SetActive(false);
-            rightBossImage.SetActive(false);
-        }
     }
 
     public void UpdateLeftScene()
@@ -176,6 +161,10 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
         if (lRestEncounter)
         {
             SceneManager.LoadScene(3);
+        }
+        if (lBossEncounter)
+        {
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -189,6 +178,10 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
         {
             SceneManager.LoadScene(3);
         }
+        if (rBossEncounter)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void UpdateLeftEncounterBools()
@@ -198,28 +191,24 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             lCombatEncounter = true;
             lBossEncounter = false;
             lRestEncounter = false;
-            lEventEncounter = false;
         }
         if (leftDoorOption == "boss")
         {
             lCombatEncounter = false;
             lBossEncounter = true;
             lRestEncounter = false;
-            lEventEncounter = false;
         }
         if (leftDoorOption == "rest")
         {
             lCombatEncounter = false;
             lBossEncounter = false;
             lRestEncounter = true;
-            lEventEncounter = false;
         }
         if (leftDoorOption == "event")
         {
             lCombatEncounter = false;
             lBossEncounter = false;
             lRestEncounter = false;
-            lEventEncounter = true;
         }
     }
 
@@ -230,28 +219,24 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
             rCombatEncounter = true;
             rBossEncounter = false;
             rRestEncounter = false;
-            rEventEncounter = false;
         }
         if (rightDoorOption == "boss")
         {
             rCombatEncounter = false;
             rBossEncounter = true;
             rRestEncounter = false;
-            rEventEncounter = false;
         }
         if (rightDoorOption == "rest")
         {
             rCombatEncounter = false;
             rBossEncounter = false;
             rRestEncounter = true;
-            rEventEncounter = false;
         }
         if (rightDoorOption == "event")
         {
             rCombatEncounter = false;
             rBossEncounter = false;
             rRestEncounter = false;
-            rEventEncounter = true;
         }
     }
     #endregion 

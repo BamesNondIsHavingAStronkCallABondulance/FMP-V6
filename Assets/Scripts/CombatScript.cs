@@ -116,6 +116,8 @@ public class CombatScript : MonoBehaviour
             spawnInt = 2;
         }
 
+        PlayerPrefs.SetInt("gameFloor", 5);
+
         if (spawnInt == 0)
         {
             currentEnemy.health = deathCultist.health;
@@ -602,10 +604,18 @@ public class CombatScript : MonoBehaviour
     {
         if (enemyIsDead)
         {
-            PlayerPrefs.SetInt("playerEnergy", (PlayerPrefs.GetInt("playerEnergy") + 1));
-            PlayerPrefs.SetInt("gameFloor", (PlayerPrefs.GetInt("gameFloor") + 1));
+            if ((PlayerPrefs.GetInt("gameFloor") >= 5))
+            {
+                print("YAY");
+                SceneManager.LoadScene(4);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("playerEnergy", (PlayerPrefs.GetInt("playerEnergy") + 1));
+                PlayerPrefs.SetInt("gameFloor", (PlayerPrefs.GetInt("gameFloor") + 1));
 
-            SceneManager.LoadScene(2);
+                SceneManager.LoadScene(2);
+            }
         }
     }
     #endregion

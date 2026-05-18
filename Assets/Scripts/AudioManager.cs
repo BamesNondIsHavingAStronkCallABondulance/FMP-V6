@@ -54,11 +54,6 @@ public class AudioManager : MonoBehaviour
         LoadVolume();
     }
 
-    private void Start()
-    {
-        PlayMusicClip("MainMenu");
-    }
-
     private void Update()
     {
         CheckScene();
@@ -79,8 +74,8 @@ public class AudioManager : MonoBehaviour
         {
             if(frontend)
             {
-                StopMusicClip("DummyScene");
-                PlayMusicClip("Frontend");
+                PlayMusicClip("MenuMusic");
+                //Stop all other clips
                 frontend = false;
                 combatScene = true;
             }
@@ -89,8 +84,8 @@ public class AudioManager : MonoBehaviour
         {
             if (combatScene)
             {
-                StopMusicClip("Frontend");
-                PlayMusicClip("DummyScene");
+                //StopMusicClip("Frontend");
+                //PlayMusicClip("DummyScene");
                 combatScene = false;
                 frontend = true;
             }
