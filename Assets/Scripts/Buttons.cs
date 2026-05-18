@@ -9,7 +9,7 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void LoadMenu()
+    public void VictoryLoad()
     {
         SceneManager.LoadScene(4);
     }

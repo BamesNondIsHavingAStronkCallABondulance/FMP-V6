@@ -82,9 +82,19 @@ public class CombatScript : MonoBehaviour
         IsEnemyDead();
         TurnTracking();
 
+        IsPlayerDead();
+
         CombatEndRewards();
 
         PlayerPrefs.SetInt("playerHealth", playerHealth);
+    }
+
+    void IsPlayerDead()
+    {
+        if(playerHealth < 0)
+        {
+            SceneManager.LoadScene(5);
+        }
     }
 
     public void TurnTracking()
@@ -116,9 +126,12 @@ public class CombatScript : MonoBehaviour
             spawnInt = 2;
         }
 
-        PlayerPrefs.SetInt("gameFloor", 5);
+        if (PlayerPrefs.GetInt("gameFloor") == 1)
+        {
+            spawnInt = 0;
+        }
 
-        if (spawnInt == 0)
+            if (spawnInt == 0)
         {
             currentEnemy.health = deathCultist.health;
 
