@@ -76,42 +76,36 @@ public class HandManager : MonoBehaviour
     {
         deckOfCards[0].cardName = "Punch";
         deckOfCards[0].cardDescription = "Deals 4 damage";
-        deckOfCards[0].damage = 4;
         deckOfCards[0].cardTypeText = "Attack";
         deckOfCards[0].cardType = CardType.Attack;
         //deckOfCards[0].cardSprite = listOfCardsScript.punch.cardSprite;
 
         deckOfCards[1].cardName = "Punch";
         deckOfCards[1].cardDescription = "Deals 4 damage";
-        deckOfCards[1].damage = 4;
         deckOfCards[1].cardTypeText = "Attack";
         deckOfCards[1].cardType = CardType.Attack;
         //deckOfCards[1].cardSprite = listOfCardsScript.punch.cardSprite;
 
         deckOfCards[2].cardName = "Kick";
         deckOfCards[2].cardDescription = "Deals 6 damage";
-        deckOfCards[2].damage = 6;
         deckOfCards[2].cardTypeText = "Attack";
         deckOfCards[2].cardType = CardType.Attack;
         //deckOfCards[2].cardSprite = listOfCardsScript.punch.cardSprite;
 
         deckOfCards[3].cardName = "Dodge";
         deckOfCards[3].cardDescription = "Gain 4 Block";
-        deckOfCards[3].block = 4;
         deckOfCards[3].cardTypeText = "Skill";
         deckOfCards[3].cardType = CardType.Skill;
         //deckOfCards[3].cardSprite = listOfCardsScript.dodge.cardSprite;
 
         deckOfCards[4].cardName = "Dodge";
         deckOfCards[4].cardDescription = "Gain 4 Block";
-        deckOfCards[4].block = 4;
         deckOfCards[4].cardTypeText = "Skill";
         deckOfCards[4].cardType = CardType.Skill;
         //deckOfCards[4].cardSprite = listOfCardsScript.dodge.cardSprite;
 
         deckOfCards[5].cardName = "Dodge";
         deckOfCards[5].cardDescription = "Gain 4 Block";
-        deckOfCards[5].block = 4;
         deckOfCards[5].cardTypeText = "Skill";
         deckOfCards[5].cardType = CardType.Skill;
         //deckOfCards[5].cardSprite = listOfCardsScript.dodge.cardSprite;

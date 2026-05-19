@@ -12,12 +12,9 @@ public class AudioManager : MonoBehaviour
     public const string MUSIC_KEY = "MusicVolume";
     public const string SFX_KEY = "SFXVolume";
 
-    //What scene is active
-
-    bool frontend = true;
-    bool combatScene = false;
-
     public Sound[] sounds;
+
+    bool frontEnd, combat, crossroads, firstPass = true;
 
     void Awake()
     {
@@ -72,23 +69,52 @@ public class AudioManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
         {
-            if(frontend)
+            if (firstPass)
             {
                 PlayMusicClip("MenuMusic");
-                //Stop all other clips
-                frontend = false;
-                combatScene = true;
+                StopMusicClip("NavigatingMusic");
+                StopMusicClip("BossCombat");
+
+                firstPass = false;
+                frontEnd = true;
             }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1))
         {
-            if (combatScene)
+            if (frontEnd || crossroads)
             {
-                //StopMusicClip("Frontend");
-                //PlayMusicClip("DummyScene");
-                combatScene = false;
-                frontend = true;
+                StopMusicClip("MenuMusic");
+                StopMusicClip("NavigatingMusic");
+                PlayMusicClip("BossCombat");
+
+                frontEnd = false;
+                crossroads = false;
+                combat = true;
             }
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+        {
+            if (combat)
+            {
+                StopMusicClip("MenuMusic");
+                PlayMusicClip("NavigatingMusic");
+                StopMusicClip("BossCombat");
+
+                combat = false;
+                crossroads = true;
+            }
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) //rest scene
+        {
+
+        }
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(4) || SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(5))
+        {
+            firstPass = true;
+            combat = false;
+            crossroads = false;
+            frontEnd = false;
         }
     }
 

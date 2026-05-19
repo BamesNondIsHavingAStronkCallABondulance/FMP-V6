@@ -571,7 +571,7 @@ MonoBehaviour:
     sfxMixer: {fileID: -4648059521943967658, guid: 4048e279609377746a12c0d33ace5be0, type: 2}
     name: MenuMusic
     clip: {fileID: 8300000, guid: 80c8c62069e538e439769a2736f7e31d, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 1
   - musicSource: {fileID: 623915879}
@@ -580,7 +580,7 @@ MonoBehaviour:
     sfxMixer: {fileID: -4648059521943967658, guid: 4048e279609377746a12c0d33ace5be0, type: 2}
     name: BossCombat
     clip: {fileID: 8300000, guid: d1b90c24a8ac87f4299ce8769fdc4450, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 1
   - musicSource: {fileID: 623915879}
@@ -589,7 +589,7 @@ MonoBehaviour:
     sfxMixer: {fileID: -4648059521943967658, guid: 4048e279609377746a12c0d33ace5be0, type: 2}
     name: NavigatingMusic
     clip: {fileID: 8300000, guid: 7b8b17b38d5844e458ea4da7396b87c9, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 1
 --- !u!4 &184270407
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 184270409}
+      - m_Target: {fileID: 1227961502}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: L1Load
         m_Mode: 1
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 184270409}
+      - m_Target: {fileID: 1227961502}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -2607,6 +2607,50 @@ Transform:
   - {fileID: 2122644859}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1227961501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227961503}
+  - component: {fileID: 1227961502}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1227961502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227961501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec19c7edf90e8f438a42c9a436e45da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buttons
+--- !u!4 &1227961503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227961501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.64365, y: 3.58189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269347809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,7 +2733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1269347812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1227961502}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: MuteMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1269347812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4797,3 +4853,4 @@ SceneRoots:
   - {fileID: 1147744818}
   - {fileID: 1462093823}
   - {fileID: 184270407}
+  - {fileID: 1227961503}

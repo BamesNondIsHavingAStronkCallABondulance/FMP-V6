@@ -19,6 +19,12 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void MuteMusic()
+    {
+        Sound s = Array.Find(AudioManager.instance.sounds, sound => sound.name == name);
+        s.musicSource.mute = !s.musicSource.mute;
+    }
+
     public void PlayMusicClip(string name)
     {
         Sound s = Array.Find(AudioManager.instance.sounds, sound => sound.name == name);

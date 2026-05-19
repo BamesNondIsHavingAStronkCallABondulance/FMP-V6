@@ -77,9 +77,6 @@ public class ChooseDoor : MonoBehaviour //IPointerClickHandler
                     rerollEncounter = true;
                 }
             }
-
-            print(rightDoorOption);
-            print(leftDoorOptionInt);
         }
 
         if (floorNumber == 5)

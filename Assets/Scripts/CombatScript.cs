@@ -258,6 +258,8 @@ public class CombatScript : MonoBehaviour
                 }
                 else if(playCardsScript.enemyIsSelected)
                 {
+                    playerCardDamage = 0;
+
                     if (playCardsScript.card1Selected && playCardsScript.cardIsPlayed)
                     {
                         Card1Logic();

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -20,26 +21,35 @@ public class PlayerManager : MonoBehaviour
 
         }
 
-        if (PlayerPrefs.GetInt("playerHealth") != 30)
-        {
-            PlayerPrefs.SetInt("playerHealth", 30);
-        }
-        else
-        {
-            combatScript.playerHealth = PlayerPrefs.GetInt("playerHealth");
-        }
-        
-        PlayerPrefs.SetInt("gameFloor", 1);
 
-        if (PlayerPrefs.GetInt("playerEnergy") != 1)
-        {
-            PlayerPrefs.SetInt("playerEnergy", 1);
-            print(PlayerPrefs.GetInt("playerEnergy"));
-        }
+        /* if (PlayerPrefs.GetInt("playerHealth") != 30)
+         {
+             PlayerPrefs.SetInt("playerHealth", 30);
+         }
+         else
+         {
+             combatScript.playerHealth = PlayerPrefs.GetInt("playerHealth");
+         }
+
+         if (PlayerPrefs.GetInt("playerEnergy") != 1)
+         {
+             PlayerPrefs.SetInt("playerEnergy", 1);
+             print(PlayerPrefs.GetInt("playerEnergy"));
+         }*/
+
+        PlayerPrefs.SetInt("playerHealth", 30);
+        PlayerPrefs.SetInt("gameFloor", 1);
+        PlayerPrefs.SetInt("playerEnergy", 1);
     }
 
     private void Update()
     {
-        //PlayerPrefs.SetInt("playerHealth", combatScript.playerHealth);
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        {
+            PlayerPrefs.SetInt("playerHealth", 30);
+            PlayerPrefs.SetInt("gameFloor", 1);
+            PlayerPrefs.SetInt("playerEnergy", 1);
+        }
+
     }
 }
