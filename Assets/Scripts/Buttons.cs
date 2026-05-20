@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
-
+    AudioManager audioManager;
     public void L1Load()
     {
         SceneManager.LoadScene(1);
@@ -17,6 +17,8 @@ public class Buttons : MonoBehaviour
     public void MenuLoad()
     {
         SceneManager.LoadScene(0);
+        audioManager.firstPass = true;
+        audioManager.frontEnd = false;
     }
 
     public void MuteMusic()

@@ -91,7 +91,7 @@ public class CombatScript : MonoBehaviour
 
     void IsPlayerDead()
     {
-        if(playerHealth < 0)
+        if(playerHealth <= 0)
         {
             SceneManager.LoadScene(5);
         }

@@ -104,8 +104,8 @@ public class HandManager : MonoBehaviour
         deckOfCards[4].cardType = CardType.Skill;
         //deckOfCards[4].cardSprite = listOfCardsScript.dodge.cardSprite;
 
-        deckOfCards[5].cardName = "Dodge";
-        deckOfCards[5].cardDescription = "Gain 4 Block";
+        deckOfCards[5].cardName = "Dive";
+        deckOfCards[5].cardDescription = "Gain 6 Block";
         deckOfCards[5].cardTypeText = "Skill";
         deckOfCards[5].cardType = CardType.Skill;
         //deckOfCards[5].cardSprite = listOfCardsScript.dodge.cardSprite;

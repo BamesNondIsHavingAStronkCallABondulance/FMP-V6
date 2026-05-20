@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
 
-    bool frontEnd, combat, crossroads, firstPass = true;
+    public bool frontEnd, combat, crossroads, firstPass = true;
 
     void Awake()
     {
